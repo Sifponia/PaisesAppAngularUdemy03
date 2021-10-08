@@ -1,0 +1,48 @@
+<div *ngIf="paises.length > 0"  class="centrarTable">
+
+  <section>
+    <!--for demo wrap-->
+    <h1>Table Country</h1>
+    <div class="tbl-header">
+      <table class="table table-hover" cellpadding="0" cellspacing="0" border="0">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Bandera</th>
+          <th>Nombre</th>
+          <th>Población</th>
+          <th>Ver...</th>
+
+
+        </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+        <tr *ngFor="let p of paises; let i = index">
+          <td>{{i + 1}}</td>
+          <td class="bandera">{{p.flag}}</td>
+          <td> {{p.capital}}, {{p.name.common}}</td>
+          <td>{{p.population | number}}</td>
+          <td>
+            <a [routerLink]="['/pais', p.cca3]">Ver</a>
+          </td>
+
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- follow me template -->
+  <div class="made-with-love">
+    Made with
+    <i>♥</i> by
+    <a target="_blank" href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+  </div>
+</div>
+

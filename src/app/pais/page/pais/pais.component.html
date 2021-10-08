@@ -1,0 +1,27 @@
+<app-pais-input
+  (onEnter)="buscar($event)"
+  (onDebounce)="sugerencias($event)"
+  placeholder="Buscar Pais...">
+
+</app-pais-input>
+<div>
+  <ul class="list-group" *ngIf="isMostarSugeridos">
+    <li *ngFor="let pSugeria of paisesSugeridos" class="list-group-item  list-group-item-action">
+      <a [routerLink]="['/pais', pSugeria.cca3]">{{pSugeria.name.common}}</a></li>
+    <li (click)="buscarSugeridos(termino)" class="list-group-item  list-group-item-action"><a>
+      Buscar {{termino}}
+    </a></li>
+  </ul>
+</div>
+<hr>
+
+<div *ngIf="isError" class="alert alert-danger">
+  No hay datos de {{termino}}
+</div>
+
+
+<app-tabla-pais [paises]="paises">
+
+</app-tabla-pais>
+
+

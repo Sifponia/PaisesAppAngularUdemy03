@@ -1,0 +1,14 @@
+<div class="flexsearch">
+  <div class="flexsearch--wrapper">
+
+    <form (ngSubmit)="buscar()" autocomplete="off">
+      <div class="flexsearch--input-wrapper">
+        <input class="flexsearch--input"
+               name="termino" [(ngModel)]="termino"
+               [placeholder]="placeholder"
+               (input)="teclaSearchCountry($event)">
+      </div>
+      <!-- <input class="flexsearch--submit" type="submit" placeholder="search" value="&#10140;"/>-->
+    </form>
+  </div>
+</div>

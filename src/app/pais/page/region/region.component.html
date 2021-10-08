@@ -1,0 +1,11 @@
+<h3>Buscar Por Region <strong>{{datoRegions | titlecase}}</strong></h3>
+
+<hr>
+
+<div *ngFor="let regions of regiones  " class="btn-group" role="group" aria-label="Basic outlined example">
+  <button type="button" (click)="regionActiva(regions)" class="btn btn-outline-primary">{{regions}}</button>
+
+</div>
+<app-tabla-pais [paises]="paises">
+
+</app-tabla-pais>

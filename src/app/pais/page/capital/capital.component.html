@@ -1,0 +1,16 @@
+<app-pais-input
+  (onEnter)="buscar($event)"
+  (onDebounce)="sugerencias($event)"
+  placeholder="BCapital..." >
+
+</app-pais-input>
+<hr>
+
+<div *ngIf="isError" class="alert alert-danger">
+  No hay datos de {{termino}}
+</div>
+
+
+<app-tabla-pais [paises]="capital">
+
+</app-tabla-pais>
